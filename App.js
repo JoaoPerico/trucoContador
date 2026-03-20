@@ -23,16 +23,44 @@ export default function App() {
 
           <TouchableOpacity
             style={styles.botaoMais}
-            onPress={() => setContador1(contador1 + 1)}
+            onPress={() => setContador1(Math.min(contador1 + 1, 12))}
           >
             <Text>Aumentar</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.botaoMenos}
-            onPress={() => setContador1(contador1 - 1)}
+            onPress={() => setContador1(Math.max(contador1 - 1, 0))}
           >
             <Text>Diminuir</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador1(Math.min(contador1 + 3, 12))}
+          >
+            <Text style={styles.textoBotao}>TRUCO</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador1(Math.min(contador1 + 6, 12))}
+          >
+            <Text style={styles.textoBotao}>SEIS</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador1(Math.min(contador1 + 9, 12))}
+          >
+            <Text style={styles.textoBotao}>NOVE</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador1(Math.min(contador1 + 12, 12))}
+          >
+            <Text style={styles.textoBotao}>DOZE</Text>
           </TouchableOpacity>
         </View>
 
@@ -42,16 +70,44 @@ export default function App() {
 
           <TouchableOpacity
             style={styles.botaoMais}
-            onPress={() => setContador2(contador2 + 1)}
+            onPress={() => setContador2(Math.min(contador2 + 1, 12))}
           >
             <Text>Aumentar</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.botaoMenos}
-            onPress={() => setContador2(contador2 - 1)}
+            onPress={() => setContador2(Math.max(contador2 - 1, 0))}
           >
             <Text>Diminuir</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador2(Math.min(contador2 + 3, 12))}
+          >
+            <Text style={styles.textoBotao}>TRUCO</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador2(Math.min(contador2 + 6, 12))}
+          >
+            <Text style={styles.textoBotao}>SEIS</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador2(Math.min(contador2 + 9, 12))}
+          >
+            <Text style={styles.textoBotao}>NOVE</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.botao}
+            onPress={() => setContador2(Math.min(contador2 + 12, 12))}
+          >
+            <Text style={styles.textoBotao}>DOZE</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -90,5 +146,19 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
+  },
+
+  botao: {
+    width: 120,
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 5,
+  },
+
+  textoBotao: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
